@@ -1,0 +1,20 @@
+# Use a Python base image
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy all project files into the container
+COPY . /app
+
+# Expose the ports needed by both FastAPI and Streamlit
+EXPOSE 8000
+EXPOSE 8501
+
+# Command to start both FastAPI (main.py) and Streamlit (chat_ui.py)
+# NOTE: This uses a complex startup script that requires the run_web.sh file below.
+CMD ["bash", "run_web.sh"]

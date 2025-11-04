@@ -1,0 +1,89 @@
+  /* --- Final Fix: Force Full-Page Background Gradient --- */
+html, body, [data-testid="stAppViewContainer"] {
+    background-image: linear-gradient(160deg, #622774 0%, #c53364 50%, #ee784b 100%) !important;
+    background-color: #ee784b !important;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color: white !important;
+}
+.stApp {
+    background-color: transparent !important;
+}
+
+
+/* --- Sidebar Background Match --- */
+[data-testid="stSidebar"] > div:first-child {
+    background-image: linear-gradient(160deg, #622774 0%, #c53364 50%, #ee784b 100%) !important;
+    background-size: 100% 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- Sidebar Text Color --- */
+[data-testid="stSidebar"] .stMarkdown {
+    color: white !important;
+}
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2 {
+    color: #DA70D6 !important; /* A bright purple (Orchid) */
+}
+
+/* Sidebar Info Box Readability */
+[data-testid="stSidebar"] .stAlert {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+[data-testid="stSidebar"] .stAlert p {
+    color: white !important;
+}
+
+/* Sidebar Button (History) */
+[data-testid="stSidebar"] .stButton > button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+[data-testid="stSidebar"] .stButton > button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* --- Main Header (Title) --- */
+h1, .stCaption {
+     color: white !important;
+}
+
+/* --- Chat Bubble Styling (White) --- */
+div[data-chat-message-container-type="user"] [data-testid="stChatMessage"] {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Opaque white */
+    border-radius: 20px 20px 5px 20px;
+}
+div[data-chat-message-container-type="assistant"] [data-testid="stChatMessage"] {
+    background-color: rgba(255, 255, 255, 0.7) !important; /* Transparent white */
+    border-radius: 20px 20px 20px 5px;
+}
+
+/* Chat Bubble Text Color */
+div[data-testid="stChatMessageContent"] p {
+    color: black !important;
+}
+
+/* Make the spinner text black to match bubbles */
+.stSpinner > div > div {
+    color: black !important;
+}
+
+/* --- CHAT INPUT BAR STYLING --- */
+[data-testid="stBottomBlockContainer"] {
+    background-color: transparent !important;
+}
+[data-testid="stChatInput"] {
+    background-color: transparent !important;
+}
+[data-testid="stChatInput"] div[data-baseweb="base-input"] {
+    background-color: rgba(255, 255, 255, 0.7) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 25px !important;
+}
+[data-testid="stChatInput"] textarea { 
+    color: black
